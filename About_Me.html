@@ -12,7 +12,12 @@
   nav{position:sticky;top:24px;align-self:start;background:var(--rail);border-radius:10px;padding:18px}
   h1,h2{margin:.2rem 0}
   .muted{color:var(--muted)} .rule{border-bottom:1px solid var(--rule);margin:1rem 0}
-  .hero{display:flex;gap:16px;align-items:center} .hero img{width:84px;height:84px;border-radius:50%;object-fit:cover}
+  .hero{display:flex;gap:16px;align-items:center} .hero img {
+  width: 100%;      
+  height: auto;     
+  border-radius: 0; 
+  object-fit: contain; 
+}
   .section{margin:32px 0}
   @media(max-width:900px){.wrap{grid-template-columns:1fr}}
   /* left menu */

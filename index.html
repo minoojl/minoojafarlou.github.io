@@ -3,55 +3,223 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Minoo Jafarlou</title>
-  <meta name="description" content="Minoo Jafarlou — CV and contact" />
+  <title>Your Name — About</title>
+  <meta name="description" content="Your Name — Ph.D. Candidate. Research, publications, teaching, and contact." />
   <style>
-    :root { --ink:#1f3a63; --link:#2a5db0; --muted:#6b7280; }
-    html,body{height:100%} body{margin:0;font:16px/1.6 Georgia, "Times New Roman", serif;color:#111;}
-    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
-    .wrap{display:flex;min-height:100vh}
-    nav{width:180px;background:#f7f7f7;border-right:1px solid #e5e7eb;padding:24px 16px;position:sticky;top:0;height:100vh}
-    nav a{display:block;margin:6px 0}
-    main{flex:1;padding:24px 32px}
-    h1{margin:0 0 12px;font-size:36px;border-bottom:3px double #c9ced6;color:var(--ink)}
-    h2{margin-top:28px;color:var(--ink)}
-    .row{display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start}
-    img.photo{width:280px;height:auto;border:1px solid #d1d5db}
-    .footer{margin-top:40px;color:var(--muted);font-size:14px;border-top:1px solid #e5e7eb;padding-top:10px}
+    /* ---- Design tokens ---- */
+    :root{
+      --bg:#ffffff; --ink:#14213d; --muted:#5b677a; --link:#1d4ed8; --hover:#0f172a0f;
+      --sidebar:#f5f7fb; --rule:#e5e7eb;
+      --maxw:1100px; --navw:260px; --pad:20px; --radius:10px;
+      --shadow:0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.06);
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b1220; --ink:#e5e7eb; --muted:#a3adc2; --link:#8ab4ff; --hover:#ffffff12;
+        --sidebar:#0f172a; --rule:#1f2937;
+      }
+    }
+
+    /* ---- Global ---- */
+    html, body { height:100%; }
+    body{ margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink); background:var(--bg); }
+    a{ color:var(--link); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    h1,h2,h3{ margin:0 0 .5rem; line-height:1.25; }
+    h1{ font-size:2rem; } h2{ font-size:1.25rem; letter-spacing:.2px; }
+    p,li{ color:var(--ink); }
+    .muted{ color:var(--muted); }
+    .rule{ border-bottom:1px solid var(--rule); margin:1rem 0; }
+
+    /* ---- Layout ---- */
+    .wrap{ max-width:var(--maxw); margin:0 auto; display:grid; grid-template-columns: var(--navw) 1fr; gap:28px; padding:28px; }
+    nav{ position:sticky; top:24px; align-self:start; background:var(--sidebar); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+    main{ padding:0 6px; }
+    .nav-title{ font-weight:700; margin-bottom:.6rem; }
+    .nav-group{ margin-bottom:14px; }
+    .nav-group > div{ font-weight:600; margin-bottom:6px; }
+    .nav-group ul{ list-style:none; margin:0; padding:0; }
+    .nav-group li{ margin:3px 0; }
+    .nav-group a{ display:inline-block; padding:2px 6px; border-radius:6px; }
+    .nav-group a:hover{ background:var(--hover); text-decoration:none; }
+
+    /* ---- Cards / sections ---- */
+    .section{ margin-bottom:36px; }
+    .course-list a{ font-weight:600; }
+    .contact{ background:var(--sidebar); padding:16px; border-radius:var(--radius); box-shadow:var(--shadow); }
+    .kicker{ font-weight:600; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); font-size:.85rem; }
+
+    /* ---- Header ---- */
+    .hero{ display:flex; align-items:center; gap:18px; margin-bottom:20px; }
+    .hero img{ width:84px; height:84px; border-radius:50%; object-fit:cover; box-shadow:var(--shadow); }
+    .tagline{ color:var(--muted); }
+
+    /* ---- Footer ---- */
+    footer{ padding:28px; text-align:center; color:var(--muted); font-size:.9rem; }
+
+    /* ---- Mobile ---- */
+    @media (max-width: 900px){
+      .wrap{ grid-template-columns: 1fr; padding:18px; }
+      nav{ position:relative; top:auto; }
+    }
+
+    /* ---- Tiny JS-free nav toggle for mobile ---- */
+    details.nav { margin-bottom:12px; }
+    details.nav > summary{ list-style:none; cursor:pointer; padding:10px 12px; background:var(--hover); border-radius:8px; }
+    details.nav > summary::-webkit-details-marker{ display:none; }
+    @media (min-width: 901px){ details.nav{ display:none; } }
   </style>
 </head>
 <body>
-<div class="wrap">
-  <nav>
-    <a href="/">Home</a>
-    <a href="https://github.com/minoojl" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://www.linkedin.com/in/minoojafarlou" target="_blank" rel="noopener">LinkedIn</a>
-  </nav>
 
-  <main>
-    <h1>Minoo Jafarlou</h1>
+  <!-- Mobile nav toggle -->
+  <details class="nav">
+    <summary>☰ Menu</summary>
+    <nav aria-label="Side Navigation">
+      <div class="nav-title">Works</div>
 
-    <div class="row">
-      <img class="photo" src="photo.jpg" alt="Minoo Jafarlou portrait">
-      <div>
-        <p><strong>Researcher / Software Engineer</strong><br>
-        Department / Organization (City, Country)</p>
-        <p>
-          Email: <a href="mailto:you@minoojafarlou.com">you [at] minoojafarlou.com</a><br>
-          <a href="https://www.example-university.edu" target="_blank" rel="noopener">Example University</a>
-        </p>
+      <div class="nav-group">
+        <div>Perception &amp; Expression</div>
+        <ul>
+          <li><a href="#hoagsolife">HoagsOLife</a></li>
+          <li><a href="#equivalence">Equivalence (2022/2023)</a></li>
+          <li><a href="#emotional">EmotionNAL</a></li>
+        </ul>
       </div>
-    </div>
 
-    <h2>About Me</h2>
-    <p>Short bio — replace this with 2–3 sentences about research focus, skills, and current role.</p>
+      <div class="nav-group">
+        <div>Technology &amp; Museums</div>
+        <ul>
+          <li><a href="#dataviz">Data Visualization</a></li>
+          <li><a href="#imagerec">Image Recognition</a></li>
+          <li><a href="#vmuseums">Virtual Museums</a></li>
+        </ul>
+      </div>
 
-    <p>Feel free to have a look at my
-      <a href="cv-full.pdf">full</a> and
-      <a href="cv-short.pdf">short</a> resume.</p>
+      <div class="nav-group">
+        <div>Educational Technology</div>
+        <ul>
+          <li><a href="#redesign">Redesign Yousician</a></li>
+          <li><a href="#contaqt">ContAQT System</a></li>
+          <li><a href="#literacy">Data Literacy Education</a></li>
+        </ul>
+      </div>
 
-    <div class="footer">Page handcrafted with plain HTML/CSS.</div>
-  </main>
-</div>
+      <div class="rule"></div>
+      <ul style="list-style:none; margin:0; padding:0;">
+        <li><a href="#about">About</a></li>
+        <li><a href="#pubs">Publication</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="/cv.pdf">CV</a></li>
+      </ul>
+    </nav>
+  </details>
+
+  <div class="wrap">
+    <!-- Desktop sidebar -->
+    <nav aria-label="Side Navigation">
+      <div class="nav-title">Works</div>
+
+      <div class="nav-group">
+        <div>Perception &amp; Expression</div>
+        <ul>
+          <li><a href="#hoagsolife">HoagsOLife</a></li>
+          <li><a href="#equivalence">Equivalence (2022/2023)</a></li>
+          <li><a href="#emotional">EmotionNAL</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div>Technology &amp; Museums</div>
+        <ul>
+          <li><a href="#dataviz">Data Visualization</a></li>
+          <li><a href="#imagerec">Image Recognition</a></li>
+          <li><a href="#vmuseums">Virtual Museums</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div>Educational Technology</div>
+        <ul>
+          <li><a href="#redesign">Redesign Yousician</a></li>
+          <li><a href="#contaqt">ContAQT System</a></li>
+          <li><a href="#literacy">Data Literacy Education</a></li>
+        </ul>
+      </div>
+
+      <div class="rule"></div>
+      <ul style="list-style:none; margin:0; padding:0;">
+        <li><a href="#about">About</a></li>
+        <li><a href="#pubs">Publication</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="/cv.pdf">CV</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main content -->
+    <main>
+      <header class="hero">
+        <img src="photo.jpg" alt="Your portrait" />
+        <div>
+          <h1>Your Name</h1>
+          <div class="tagline">Computer Science Ph.D. Candidate, Georgia State University</div>
+          <div class="muted">Research: X • Y • Z</div>
+        </div>
+      </header>
+
+      <section id="about" class="section">
+        <div class="kicker">About</div>
+        <p>I’m a Ph.D. candidate in Computer Science at Georgia State University. Previously, I completed a B.Sc. in Computer Engineering and an M.Sc. in Computer Science (Software Engineering) at GSU. My work focuses on <strong>data visualization</strong>, <strong>media computing</strong>, and <strong>computational aesthetics</strong>.</p>
+      </section>
+
+      <section class="section">
+        <div class="kicker">Teaching</div>
+        <div class="course-list">
+          <p><a href="#" target="_blank">Spring 2025 CS6730 Data Visualization: Principles &amp; Applications</a>, at GaTech.</p>
+          <p><a href="#" target="_blank">Spring 2023 MAT201A Media Signal Processing</a>, at UCSB.</p>
+          <p><a href="#" target="_blank">Winter 2023 MAT259 Data Visualization</a>, at UCSB.</p>
+          <p><a href="#" target="_blank">Fall 2022 MAT255 Techniques, History &amp; Aesthetics of the Computational Photographic Image</a>, at UCSB.</p>
+          <p><a href="#" target="_blank">Spring 2022 MAT255 Computational Aesthetics</a>, at UCSB.</p>
+          <p><a href="#" target="_blank">Winter 2022 MAT259 Data Visualization</a>, at UCSB.</p>
+        </div>
+      </section>
+
+      <section id="pubs" class="section">
+        <div class="kicker">Selected Publications</div>
+        <ul>
+          <li><strong>Title A</strong> — Venue, Year. <a href="#">PDF</a> · <a href="#">Code</a></li>
+          <li><strong>Title B</strong> — Venue, Year. <a href="#">PDF</a> · <a href="#">Code</a></li>
+        </ul>
+      </section>
+
+      <section id="contact" class="section contact">
+        <h2>Contact</h2>
+        <p>Technology Square Research Building, 85 5th St NW, Atlanta, GA 30308, United States</p>
+        <p><a href="mailto:you@gatech.edu">you@gatech.edu</a></p>
+        <p>
+          <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a> ·
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a> ·
+          <a href="/cv.pdf" target="_blank">CV (PDF)</a>
+        </p>
+      </section>
+
+      <!-- Example anchors to mirror the left nav “Works” taxonomy -->
+      <section id="hoagsolife" class="section"><div class="kicker">HoagsOLife</div><p class="muted">Short description of the project and your role. Link to demo/paper.</p></section>
+      <section id="equivalence" class="section"><div class="kicker">Equivalence (2022/2023)</div><p class="muted">Description…</p></section>
+      <section id="emotional" class="section"><div class="kicker">EmotionNAL</div><p class="muted">Description…</p></section>
+      <section id="dataviz" class="section"><div class="kicker">Data Visualization</div><p class="muted">Description…</p></section>
+      <section id="imagerec" class="section"><div class="kicker">Image Recognition</div><p class="muted">Description…</p></section>
+      <section id="vmuseums" class="section"><div class="kicker">Virtual Museums</div><p class="muted">Description…</p></section>
+      <section id="redesign" class="section"><div class="kicker">Redesign Yousician</div><p class="muted">Description…</p></section>
+      <section id="contaqt" class="section"><div class="kicker">ContAQT System</div><p class="muted">Description…</p></section>
+      <section id="literacy" class="section"><div class="kicker">Data Literacy Education</div><p class="muted">Description…</p></section>
+
+    </main>
+  </div>
+
+  <footer>
+    <span class="muted">© <script>document.write(new Date().getFullYear())</script> Your Name. Minimal theme inspired by academic CV sites.</span>
+  </footer>
 </body>
 </html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Your Name — About Me</title>
+<style>
+  :root{--ink:#14213d;--muted:#5b677a;--link:#1d4ed8;--rail:#f5f7fb;--rule:#e5e7eb;--navw:260px;}
+  body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--ink)}
+  a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:var(--navw) 1fr;gap:28px;padding:28px}
+  nav{position:sticky;top:24px;align-self:start;background:var(--rail);border-radius:10px;padding:18px}
+  h1,h2{margin:.2rem 0}
+  .muted{color:var(--muted)} .rule{border-bottom:1px solid var(--rule);margin:1rem 0}
+  .hero{display:flex;gap:16px;align-items:center} .hero img{width:84px;height:84px;border-radius:50%;object-fit:cover}
+  .section{margin:32px 0}
+  @media(max-width:900px){.wrap{grid-template-columns:1fr}}
+  /* left menu */
+  .nav-title{font-weight:700;margin-bottom:.6rem}
+  .nav-group{margin-bottom:14px}
+  .nav-group>div{font-weight:600;margin-bottom:6px}
+  .nav-group ul{list-style:none;margin:0;padding:0}
+  .nav-group li{margin:3px 0}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <nav aria-label="Works">
+      <div class="nav-title">Works</div>
+
+      <div class="nav-group">
+        <div>Perception &amp; Expression</div>
+        <ul>
+          <li><a href="#Proj_A">Project A</a></li>
+          <li><a href="#Proj_B">Project B</a></li>
+          <li><a href="#Proj_C">Project C</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div>Technology &amp; Museums</div>
+        <ul>
+          <li><a href="#DataViz">Data Visualization</a></li>
+          <li><a href="#ImageRec">Image Recognition</a></li>
+          <li><a href="#VMuseum">Virtual Museums</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <div>Educational Technology</div>
+        <ul>
+          <li><a href="#Redesign">Redesign Yousician</a></li>
+          <li><a href="#ContAQT">ContAQT System</a></li>
+          <li><a href="#Literacy">Data Literacy Education</a></li>
+        </ul>
+      </div>
+
+      <div class="rule"></div>
+      <ul style="list-style:none;margin:0;padding:0">
+        <li><a href="#Info_About">About</a></li>
+        <li><a href="#Info_Publications">Publication</a></li>
+        <li><a href="#Info_Contact">Contact</a></li>
+        <li><a href="cv.pdf" target="_blank">CV</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <header class="hero">
+        <img src="photo.jpg" alt="Your portrait">
+        <div>
+          <h1>Your Name</h1>
+          <div class="muted">Computer Science Ph.D. Candidate, GSU</div>
+        </div>
+      </header>
+
+      <section id="Info_About" class="section">
+        <h2>About</h2>
+        <p>I’m a Ph.D. candidate in Computer Science at Georgia State University. Previously B.Sc. in Computer Engineering and M.Sc. in CS (Software Engineering) at GSU. Research interests: data visualization, media computing, computational aesthetics.</p>
+      </section>
+
+      <section class="section">
+        <h2>Teaching</h2>
+        <p><a href="#" target="_blank">Spring 2025 CS6730 Data Visualization: Principles &amp; Applications</a>, at GaTech.</p>
+        <p><a href="#" target="_blank">Spring 2023 MAT201A Media Signal Processing</a>, at UCSB.</p>
+        <p><a href="#" target="_blank">Winter 2023 MAT259 Data Visualization</a>, at UCSB.</p>
+        <p><a href="#" target="_blank">Fall 2022 MAT255 Techniques, History &amp; Aesthetics of the Computational Photographic Image</a>, at UCSB.</p>
+        <p><a href="#" target="_blank">Spring 2022 MAT255 Computational Aesthetics</a>, at UCSB.</p>
+        <p><a href="#" target="_blank">Winter 2022 MAT259 Data Visualization</a>, at UCSB.</p>
+      </section>
+
+      <section id="Info_Publications" class="section">
+        <h2>Selected Publications</h2>
+        <ul>
+          <li><strong>Paper A</strong> — Venue, Year. <a href="#">PDF</a> · <a href="#">Code</a></li>
+          <li><strong>Paper B</strong> — Venue, Year. <a href="#">PDF</a> · <a href="#">Code</a></li>
+        </ul>
+      </section>
+
+      <section id="Info_Contact" class="section">
+        <h2>Contact</h2>
+        <p>Technology Square Research Building, 85 5th St NW, Atlanta, GA 30308, United States</p>
+        <p><a href="mailto:you@gatech.edu">you@gatech.edu</a></p>
+        <p><a href="https://scholar.google.com/" target="_blank">Google Scholar</a> · <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a> · <a href="cv.pdf" target="_blank">CV (PDF)</a></p>
+      </section>
+
+      <!-- Example anchors tied to the left menu -->
+      <section id="Proj_A" class="section"><h2>Project A</h2><p class="muted">Short description and links.</p></section>
+      <section id="Proj_B" class="section"><h2>Project B</h2><p class="muted">Short description and links.</p></section>
+      <section id="Proj_C" class="section"><h2>Project C</h2><p class="muted">Short description and links.</p></section>
+      <section id="DataViz" class="section"><h2>Data Visualization</h2><p class="muted">Details…</p></section>
+      <section id="ImageRec" class="section"><h2>Image Recognition</h2><p class="muted">Details…</p></section>
+      <section id="VMuseum" class="section"><h2>Virtual Museums</h2><p class="muted">Details…</p></section>
+      <section id="Redesign" class="section"><h2>Redesign Yousician</h2><p class="muted">Details…</p></section>
+      <section id="ContAQT" class="section"><h2>ContAQT System</h2><p class="muted">Details…</p></section>
+      <section id="Literacy" class="section"><h2>Data Literacy Education</h2><p class="muted">Details…</p></section>
+    </main>
+  </div>
+</body>
+</html>

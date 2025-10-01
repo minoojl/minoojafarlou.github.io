@@ -11,34 +11,46 @@
   </nav>
 
   <main class="content">
-    <h1>3D Anomaly Detection</h1>
-    <p>
-      This project explores volumetric convolutional neural networks for detecting
-      structural anomalies in 3D data (e.g., CT scans, industrial parts). The
-      emphasis is on learning sparse latent representations that are robust to
-      noise and misalignment.
-    </p>
+<section id="3d-anomaly-detection">
+  <h1>3D Anomaly Detection</h1>
+  <p>
+    <strong>qczero @ Georgia Tech Demo Day</strong> — This research investigates
+    volumetric deep learning methods for structural anomaly detection in
+    three-dimensional data such as industrial parts and medical scans. The
+    focus is on designing representations that are robust to noise,
+    misalignment, and sparse data regimes.
+  </p>
 
-    <h2>Highlights</h2>
-    <ul>
-      <li>Custom 3D encoder–decoder with anomaly scoring head.</li>
-      <li>Evaluated on synthetic and medical volumetric datasets.</li>
-      <li>Benchmark against autoencoders and flow-based baselines.</li>
-    </ul>
+  <h2>Highlights</h2>
+  <ul>
+    <li>Novel 3D encoder–decoder architecture with anomaly scoring head.</li>
+    <li>Evaluation on synthetic volumetric benchmarks with real-world transfer.</li>
+    <li>Comparisons against autoencoders and flow-based generative models.</li>
+    <li>Uncertainty-aware detection using Monte Carlo dropout.</li>
+  </ul>
 
-    <h2>Technical Details</h2>
-    <p>
-      The pipeline integrates voxelized feature extraction, energy-based scoring,
-      and uncertainty estimation via MC-dropout. Training uses a hybrid loss with
-      reconstruction and margin penalties to separate inlier/outlier
-      distributions.
-    </p>
+  <h2>Technical Summary</h2>
+  <p>
+    The pipeline combines voxelized feature extraction, energy-based anomaly
+    scoring, and uncertainty quantification. Training employs a hybrid objective
+    that blends reconstruction with margin-based penalties, explicitly
+    separating inlier and outlier distributions. This yields improved
+    generalization and interpretable scoring, with implications for automated
+    inspection in industrial and biomedical settings.
+  </p>
 
-    <h2>Future Work</h2>
-    <p>
-      Extending the framework to multi-modal fusion (CT + MRI) and incorporating
-      weak supervision from domain experts.
-    </p>
+  <h2>Impact</h2>
+  <p>
+    This project contributes to the growing literature on 3D anomaly detection
+    by highlighting the role of robust latent representations in safety-critical
+    domains. Future work will explore extensions to point clouds and mesh
+    domains, as well as real-time deployment in additive manufacturing
+    pipelines.
+  </p>
+</section>
+
+
+
   </main>
 </body>
 </html>

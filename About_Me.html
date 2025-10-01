@@ -1,40 +1,30 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Minoo Jafarlou — About Me</title>
-<style>
-  :root{--ink:#14213d;--muted:#5b677a;--link:#1d4ed8;--rail:#f5f7fb;--rule:#e5e7eb;--navw:260px;}
-  body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--ink)}
-  a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
-  .wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:var(--navw) 1fr;gap:28px;padding:28px}
-  nav{position:sticky;top:24px;align-self:start;background:var(--rail);border-radius:10px;padding:18px}
-  h1,h2{margin:.2rem 0}
-  .muted{color:var(--muted)} .rule{border-bottom:1px solid var(--rule);margin:1rem 0}
-  .hero{display:flex;gap:16px;align-items:center} .hero img {
-  width: 25%;      
-  height: auto;     
-  border-radius: 0; 
-  object-fit: contain; 
-}
-  .section{margin:32px 0}
-  @media(max-width:900px){.wrap{grid-template-columns:1fr}}
-  /* left menu */
-  .nav-title{font-weight:700;margin-bottom:.6rem}
-  .nav-group{margin-bottom:14px}
-  .nav-group>div{font-weight:600;margin-bottom:6px}
-  .nav-group ul{list-style:none;margin:0;padding:0}
-  .nav-group li{margin:3px 0}
-</style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Minoo Jafarlou — About Me</title>
+
+  <!-- Use your global stylesheet (gradient + frosted rail) -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Page-specific tweak only (keeps hero image layout) -->
+  <style>
+    .hero{display:flex;gap:16px;align-items:center;margin-bottom:16px;}
+    .hero img{width:25%;height:auto;object-fit:contain;border-radius:0;}
+    .muted{color:var(--muted);}
+  </style>
 </head>
 <body>
-  <div class="wrap">
-    <nav aria-label="Works">
-      <div class="nav-title">Works</div>
+  <div class="shell">
+    <!-- Sidebar (reusable across all pages) -->
+    <aside class="rail">
+      <h3>Works</h3>
 
-      <div class="nav-group">
-        <div>Computer Vision and Deep Learning</div>
+      <div class="group">
+        <div>Computer Vision &amp; Deep Learning</div>
         <ul>
           <li><a href="proj_3d_anomaly.html">3D Anomaly Detection</a></li>
           <li><a href="proj_energy_ood.html">Robust OOD Detection via Energy</a></li>
@@ -42,8 +32,8 @@
         </ul>
       </div>
 
-      <div class="nav-group">
-        <div>Core Machine Learning & NLP Systems</div>
+      <div class="group">
+        <div>Core Machine Learning &amp; NLP Systems</div>
         <ul>
           <li><a href="proj_grad_eff.html">Efficient Gradient Computation</a></li>
           <li><a href="proj_nlp_ensemble.html">NLP Ensemble Models</a></li>
@@ -51,8 +41,8 @@
         </ul>
       </div>
       
-      <div class="nav-group">
-        <div>Medical & Neuroimaging AI</div>
+      <div class="group">
+        <div>Medical &amp; Neuroimaging AI</div>
         <ul>
           <li><a href="proj_brain_connectivity.html">Brain Connectivity Analysis</a></li>
           <li><a href="proj_brainfusion.html">BrainFusion: Multimodal Causality</a></li>
@@ -61,158 +51,160 @@
         </ul>
       </div>
 
-      <div class="rule"></div>
-      <ul style="list-style:none;margin:0;padding:0">
-        <li><a href="#Info_About">About</a></li>
-        <li><a href="#Info_Publications">Publication</a></li>
-        <li><a href="#Info_Contact">Contact</a></li>
-        <li><a href="cv.pdf" target="_blank">CV</a></li>
-      </ul>
-    </nav>
+      <div class="group">
+        <div>About</div>
+        <ul>
+          <li><a href="About_Me.html">About</a></li>
+          <li><a href="index.html#Info_Publications">Publications</a></li>
+          <li><a href="index.html#Info_Contact">Contact</a></li>
+          <li><a href="cv.pdf" target="_blank">CV</a></li>
+        </ul>
+      </div>
+    </aside>
 
+    <!-- Main content -->
     <main>
-      <header class="hero">
-        <img src="img.png" alt="My portrait">
-        <div>
-          <h1>Minoo Jafarlou</h1>
-          <div class="muted">Computer Science Ph.D. Candidate, GSU</div>
-        </div>
-      </header>
+      <div class="page">
+        <div class="nav-mini"><a href="index.html">← Back to Home</a></div>
 
-      <section id="Info_About" class="section">
-        <h2>About</h2>
-        <p>I’m a Ph.D. candidate in Computer Science at Georgia State University. Previously B.Sc. in Computer Engineering and M.Sc. in Computer Science at GSU. Research interests: Machine Learning, Deep Learning, Generative Models.</p>
-      </section>
+        <header class="hero">
+          <img src="img.png" alt="Portrait of Minoo Jafarlou">
+          <div>
+            <h1>Minoo Jafarlou</h1>
+            <div class="muted">Computer Science Ph.D. Candidate, Georgia State University</div>
+          </div>
+        </header>
 
-      <section class="section">
-        <h2>Education</h2>
-      
-        <p>
-          <span><strong>Ph.D. in Computer Science</strong></span>
-          <span style="float: right; font-style: italic;">2022 – Present</span><br>
-          Georgia State University, Atlanta, GA
-        </p>
-      
-        <p>
-          <span><strong>M.Sc. in Computer Science </strong></span>
-          <span style="float: right; font-style: italic;">2025</span><br>
-          Georgia State University, Atlanta, GA
-        </p>
-      
-        <p>
-          <span><strong>B.Sc. in Computer Engineering</strong></span>
-          <span style="float: right; font-style: italic;">—</span><br>
-        </p>
-      
-      </section>
+        <section id="Info_About" class="section">
+          <h2>About</h2>
+          <p>I’m a Ph.D. candidate in Computer Science at Georgia State University. Previously B.Sc. in Computer Engineering and M.Sc. in Computer Science at GSU. Research interests: Machine Learning, Deep Learning, Generative Models.</p>
+        </section>
 
-      <section id="Info_Publications" class="section">
-        <h2>Publications</h2>
+        <section class="section">
+          <h2>Education</h2>
 
-        <p>
-          <strong>Reducing Labeling Costs in Sentiment Analysis via Semi-Supervised Learning</strong><br>
-          Minoo Jafarlou, Mario M. Kubek<br>
-          <em>8th International Conference on Natural Language Processing and Information Retrieval (NLPIR 2024)</em>, October 15, 2024.<br>
-          <a href="https://dl.acm.org/doi/pdf/10.1145/3711542.3711570" target="_blank">[PDF]</a>
-        </p>
-      
-        <p>
-          <strong>Improving Fuzzy-Logic Based Map-Matching Method with Trajectory Stay-Point Detection</strong><br>
-          Minoo Jafarlou, Omid Mahdi Ebadati E., and Hassan Naderi<br>
-          <em>Lecture Notes in Engineering and Computer Science: Proceedings of the International MultiConference of Engineers and Computer Scientists (IMECS 2023)</em>, July 2023.<br>
-          <a href="https://www.iaeng.org/publication/IMECS2023/IMECS2023_pp48-57.pdf" target="_blank">[PDF]</a>
-        </p>
-    
-      </section>
+          <p>
+            <strong>Ph.D. in Computer Science</strong>
+            <span style="float:right;font-style:italic;">2022 – Present</span><br>
+            Georgia State University, Atlanta, GA
+          </p>
+
+          <p>
+            <strong>M.Sc. in Computer Science</strong>
+            <span style="float:right;font-style:italic;">2025</span><br>
+            Georgia State University, Atlanta, GA
+          </p>
+
+          <p>
+            <strong>B.Sc. in Computer Engineering</strong>
+            <span style="float:right;font-style:italic;">—</span>
+          </p>
+        </section>
+
+        <section id="Info_Publications" class="section">
+          <h2>Publications</h2>
+
+          <p>
+            <strong>Reducing Labeling Costs in Sentiment Analysis via Semi-Supervised Learning</strong><br>
+            Minoo Jafarlou, Mario M. Kubek<br>
+            <em>8th International Conference on Natural Language Processing and Information Retrieval (NLPIR 2024)</em>, October 15, 2024.<br>
+            <a href="https://dl.acm.org/doi/pdf/10.1145/3711542.3711570" target="_blank" rel="noopener">[PDF]</a>
+          </p>
+
+          <p>
+            <strong>Improving Fuzzy-Logic Based Map-Matching Method with Trajectory Stay-Point Detection</strong><br>
+            Minoo Jafarlou, Omid Mahdi Ebadati E., and Hassan Naderi<br>
+            <em>Lecture Notes in Engineering and Computer Science: Proceedings of the International MultiConference of Engineers and Computer Scientists (IMECS 2023)</em>, July 2023.<br>
+            <a href="https://www.iaeng.org/publication/IMECS2023/IMECS2023_pp48-57.pdf" target="_blank" rel="noopener">[PDF]</a>
+          </p>
+        </section>
 
         <section class="section research-experience">
           <h2>Research Experience</h2>
-          
+
           <p>
-            <span><strong>Researcher</strong>, Department of Computer Science, Georgia State University</span>
-            <span style="float: right; font-style: italic;">July 2024 – Present</span><br>
-            Conducting research on <strong>Out-of-Distribution Detection </strong>and <strong>Anomaly Detection</strong> and adversarial robustness in deep learning, with a focus on developing universal adversarial perturbation methods and evaluation protocols for anomaly detection.
-          </p>
-          
-          <p>
-            <span><strong>Research Assistant</strong>, TReNDS Center (GSU / Georgia Tech / Emory)</span>
-            <span style="float: right; font-style: italic;">2022 – June 2024</span><br>
-            Preprocessed <strong>MEG neuroimaging data</strong> to support large-scale brain connectivity studies and contributed to <strong>causality research</strong> by building reproducible pipelines for multimodal neuroimaging analysis.
-          </p>
-          
-          <p>
-            <span><strong>Graduate Research Assistant</strong>, Moving Object Database Research Lab (MODB), Department of Computer Engineering, Iran University of Science and Technology</span>
-            <span style="float: right; font-style: italic;">2016 – 2017</span><br>
-            
-          </p>
-          
-          <p>
-            <span><strong>Graduate Research Assistant</strong>, Computer Vision Lab, Department of Computer Engineering, Kharazmi University</span>
-            <span style="float: right; font-style: italic;">2014 – 2016</span><br>
-      
+            <strong>Researcher</strong>, Department of Computer Science, Georgia State University
+            <span style="float:right;font-style:italic;">July 2024 – Present</span><br>
+            Conducting research on <strong>Out-of-Distribution Detection</strong>, <strong>Anomaly Detection</strong>, and adversarial robustness in deep learning.
           </p>
 
-        <h2>Teaching and Supervison</h2>
-      
-        <p>
-          <span><strong>Instructor of Record</strong>, Principles of Computer Science Lab (CSC 1301L)</span>
-          <span style="float: right; font-style: italic;">Fall 2025</span><br>
-          Department of Computer Science, Georgia State University
-        </p>
-      
-        <p>
-          <span><strong>Teaching Assistant</strong>, Deep Learning (CSC 8851)</span>
-          <span style="float: right; font-style: italic;">Fall 2024</span><br>
-          Department of Computer Science, Georgia State University
-        </p>
+          <p>
+            <strong>Research Assistant</strong>, TReNDS Center (GSU / Georgia Tech / Emory)
+            <span style="float:right;font-style:italic;">2022 – June 2024</span><br>
+            Preprocessed <strong>MEG neuroimaging data</strong> and contributed to <strong>multimodal causality</strong> pipelines.
+          </p>
 
-        <p>
-          <span><strong>Teaching</strong>, Machine Learning, Databases, and Operating Systems</span>
-          <span style="float: right; font-style: italic;">Spring 2019 - Fall 2021</span><br>
-        </p>
-      
-      </section>
+          <p>
+            <strong>Graduate Research Assistant</strong>, Moving Object Database Research Lab (MODB), Iran University of Science and Technology
+            <span style="float:right;font-style:italic;">2016 – 2017</span>
+          </p>
 
+          <p>
+            <strong>Graduate Research Assistant</strong>, Computer Vision Lab, Kharazmi University
+            <span style="float:right;font-style:italic;">2014 – 2016</span>
+          </p>
+        </section>
 
-        <h2>Professional Service</h2>
-      
-        <p>
-            <p class="entry">
-          <strong>Reviewer,</strong>
-          <em>Machine Learning and the Physical Sciences (ML4PS) Workshop, NeurIPS 2025 (39th Annual Conference on Neural Information Processing Systems)</em>
-        </p>
-      
-        <p class="entry">
+        <section class="section">
+          <h2>Teaching and Supervision</h2>
+
+          <p>
+            <strong>Instructor of Record</strong>, Principles of Computer Science Lab (CSC 1301L)
+            <span style="float:right;font-style:italic;">Fall 2025</span><br>
+            Department of Computer Science, Georgia State University
+          </p>
+
+          <p>
+            <strong>Teaching Assistant</strong>, Deep Learning (CSC 8851)
+            <span style="float:right;font-style:italic;">Fall 2024</span><br>
+            Department of Computer Science, Georgia State University
+          </p>
+
+          <p>
+            <strong>Teaching</strong>, Machine Learning, Databases, and Operating Systems
+            <span style="float:right;font-style:italic;">Spring 2019 – Fall 2021</span>
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Professional Service</h2>
+
+          <p>
             <strong>Reviewer,</strong>
-            <a href="https://www.nlpir.net/committees.html" target="_blank">
+            <em>Machine Learning and the Physical Sciences (ML4PS) Workshop, NeurIPS 2025</em>
+          </p>
+
+          <p class="entry">
+            <strong>Reviewer,</strong>
+            <a href="https://www.nlpir.net/committees.html" target="_blank" rel="noopener">
               <em>International Conference on Natural Language Processing and Information Retrieval</em>
             </a>
-        </p>
-      
-        <p class="entry">
-          <strong>Reviewer,</strong>
-          <em>Automatic Control and Computer Science Journal</em>
-        </p>
-      
-        <div class="entry">
+          </p>
+
+          <p>
+            <strong>Reviewer,</strong>
+            <em>Automatic Control and Computer Science Journal</em>
+          </p>
+
           <p>
             <strong>Judge,</strong>
             <em>HackHERS 2024, Girls Who Code at Georgia State University</em>
           </p>
-        </div>
-      </section>
+        </section>
 
-        </p>
-      
-      </section>
-      
-      <section id="Info_Contact" class="section">
-        <h2>Contact</h2>
-        <p> Adress: One Park Place, Atlanta, GA 30303, United States</p>
-        <p><a href="mailto:jafarlouminoo@gmail.com">mjafarlou1 [at] gsu [dot] edu</a></p>
-        <p><a href="https://scholar.google.com/citations?user=HKke9_EAAAAJ&hl=en" target="_blank">Google Scholar</a> · <a href="https://www.linkedin.com/in/minoojafarlou/" target="_blank">LinkedIn</a> · <a href="cv.pdf" target="_blank">CV (PDF)</a></p>
-      </section>
+        <section id="Info_Contact" class="section">
+          <h2>Contact</h2>
+          <p><strong>Address:</strong> One Park Place, Atlanta, GA 30303, United States</p>
+          <p><a href="mailto:jafarlouminoo@gmail.com">jafarlouminoo@gmail.com</a></p>
+          <p>
+            <a href="https://scholar.google.com/citations?user=HKke9_EAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> ·
+            <a href="https://www.linkedin.com/in/minoojafarlou/" target="_blank" rel="noopener">LinkedIn</a> ·
+            <a href="cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+          </p>
+        </section>
+      </div>
     </main>
   </div>
 </body>
 </html>
+

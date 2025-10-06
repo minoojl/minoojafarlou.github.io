@@ -1,12 +1,18 @@
-<!-- proj_grad_eff.html -->
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><title>Efficient Gradient Computation</title><link rel="stylesheet" href="style.css">
-</head><body><main class="content">
-<h1>Efficient Gradient Computation</h1>
-<p>Re-architects backprop for throughput and cost. We optimize memory traffic, checkpointing, and custom kernels to unlock bigger batches on commodity GPUs.</p>
-<ul>
-  <li>Activation rematerialization + fused ops; mixed precision guardrails</li>
-  <li>Autograd graph pruning; IO-aware scheduling</li>
-  <li>Wins: lower VRAM, higher tokens/sec, stable convergence</li>
-</ul>
-</main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forward Gradient Descent: Efficient Learning without Backpropagation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="content">
+
+    <hr>
+    <h1>Forward Gradient Descent</h1>
+    <p><strong>Description:</strong> Backpropagation remains the dominant method for computing gradients in machine learning, yet its reverse-mode dependency incurs substantial computational and memory overhead. Building on recent advances in forward-mode differentiation, this work introduces F-Grad, a practical framework for Forward Gradient Descent that eliminates the need for backpropagation by leveraging exact directional derivatives. Unlike prior theoretical treatments, our approach delivers an efficient and fully implemented training mechanism that computes unbiased gradient estimates in a single forward pass. Implemented in Python, F-Grad integrates numerical optimization routines and adaptive step control to improve runtime efficiency and training stability.</p>
+
+
+  </main>
+</body>
+</html>

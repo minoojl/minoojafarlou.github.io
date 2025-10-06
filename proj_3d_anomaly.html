@@ -14,39 +14,9 @@
 <section id="3d-anomaly-detection">
   <h1>3D Anomaly Detection</h1>
   <p>
-    This research investigates
-    volumetric deep learning methods for structural anomaly detection in
-    three-dimensional data such as industrial parts and medical scans. The
-    focus is on designing representations that are robust to noise,
-    misalignment, and sparse data regimes.
+    This research investigates anomaly detection in 3D geometric data through the lens of Gaussian-based representation modeling. By learning spatial distributions within point clouds and volumetric embeddings, the framework identifies deviations from normality as probabilistic outliers in the learned Gaussian space. The method enhances structural awareness and uncertainty sensitivity, enabling precise localization of irregularities in complex 3D scenes. The ongoing work advances Gaussian field modeling as a foundation for reliable and interpretable 3D anomaly detection across real-world spatial domains.
   </p>
 
-  <h2>Highlights</h2>
-  <ul>
-    <li>Novel 3D encoder–decoder architecture with anomaly scoring head.</li>
-    <li>Evaluation on synthetic volumetric benchmarks with real-world transfer.</li>
-    <li>Comparisons against autoencoders and flow-based generative models.</li>
-    <li>Uncertainty-aware detection using Monte Carlo dropout.</li>
-  </ul>
-
-  <h2>Technical Summary</h2>
-  <p>
-    The pipeline combines voxelized feature extraction, energy-based anomaly
-    scoring, and uncertainty quantification. Training employs a hybrid objective
-    that blends reconstruction with margin-based penalties, explicitly
-    separating inlier and outlier distributions. This yields improved
-    generalization and interpretable scoring, with implications for automated
-    inspection in industrial and biomedical settings.
-  </p>
-
-  <h2>Impact</h2>
-  <p>
-    This project contributes to the growing literature on 3D anomaly detection
-    by highlighting the role of robust latent representations in safety-critical
-    domains. Future work will explore extensions to point clouds and mesh
-    domains, as well as real-time deployment in additive manufacturing
-    pipelines.
-  </p>
 </section>
 
 

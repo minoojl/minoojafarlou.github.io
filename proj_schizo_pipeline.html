@@ -1,8 +1,48 @@
-<!-- proj_schizo_pipeline.html -->
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8"><title>A Deep Learning-Based Multimodal Framework for Schizophrenia Classification Using Imaging Genetics</title><link rel="stylesheet" href="style.css">
-</head><body><main class="content">
-<h1>A Deep Learning-Based Multimodal Framework for Schizophrenia Classification Using Imaging Genetics</h1>
-<p>Schizophrenia (SZ) presents complex neuropathological patterns that require integrative models capable of combining structural, functional, and genetic information. This study proposes a deep learning–based multimodal framework for SZ classification leveraging structural MRI (sMRI), functional MRI (fMRI), and single nucleotide polymorphism (SNP) data from the FBIRN dataset. Morphological features were extracted from sMRI using a pre-trained DenseNet-121 network, while functional network connectivity (FNC) features were derived from fMRI through a one-dimensional CNN. Genetic biomarkers were identified by processing 4,943 SNPs with another 1D-CNN. To enhance interpretability, Layer-wise Relevance Propagation (LRP) was applied across modalities to visualize feature importance and identify neurobiologically meaningful regions and SNPs. The extracted features were fused into a unified vector representation and classified using an XGBoost model with five-fold cross-validation. The integrated model achieved an accuracy of 85.82%, outperforming unimodal baselines. Qualitative analysis revealed that the frontal and temporal lobes, subcortical-sensorimotor connectivity, and several SZ-linked SNPs contributed most to model decisions. These findings demonstrate that combining deep transfer learning, explainable AI, and multimodal fusion provides a robust and interpretable approach for imaging-genetic classification of schizophrenia.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A Deep Learning-Based Multimodal Framework for Schizophrenia Classification Using Imaging Genetics</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .content {
+      max-width: 850px;
+      margin: 40px auto;
+      font-family: "Inter", sans-serif;
+      line-height: 1.6;
+      color: #222;
+    }
+    .figure {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    }
+    .figure figcaption {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 10px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <main class="content">
+    <h1>A Deep Learning-Based Multimodal Framework for Schizophrenia Classification Using Imaging Genetics</h1>
 
-</main></body></html>
+    <div class="figure">
+      <img src="1.png" alt="Qualitative Evaluation of sMRI via DenseNet visualization">
+      <figcaption>Figure 2. Qualitative evaluation of sMRI data using Layer-wise Relevance Propagation (LRP). Highlighted regions in the frontal and temporal lobes indicate reduced cortical volume and thickness in schizophrenia subjects.</figcaption>
+    </div>
+
+    <p>
+      Schizophrenia (SZ) presents complex neuropathological patterns that require integrative models capable of combining structural, functional, and genetic information. This study proposes a deep learning–based multimodal framework for SZ classification leveraging structural MRI (sMRI), functional MRI (fMRI), and single nucleotide polymorphism (SNP) data from the FBIRN dataset. Morphological features were extracted from sMRI using a pre-trained DenseNet-121 network, while functional network connectivity (FNC) features were derived from fMRI through a one-dimensional CNN. Genetic biomarkers were identified by processing 4,943 SNPs with another 1D-CNN. To enhance interpretability, Layer-wise Relevance Propagation (LRP) was applied across modalities to visualize feature importance and identify neurobiologically meaningful regions and SNPs. The extracted features were fused into a unified vector representation and classified using an XGBoost model with five-fold cross-validation. The integrated model achieved an accuracy of 85.82%, outperforming unimodal baselines. Qualitative analysis revealed that the frontal and temporal lobes, subcortical-sensorimotor connectivity, and several SZ-linked SNPs contributed most to model decisions. These findings demonstrate that combining deep transfer learning, explainable AI, and multimodal fusion provides a robust and interpretable approach for imaging-genetic classification of schizophrenia.
+    </p>
+  </main>
+</body>
+</html>
+
